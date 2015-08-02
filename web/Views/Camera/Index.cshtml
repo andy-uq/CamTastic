@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model IEnumerable<CameraModel>
+<!DOCTYPE html>
 
 <html>
 <head>
@@ -10,28 +11,16 @@
 		@Html.Action("CameraJson")
 	</script>
 
-	<script type="text/javascript">
-		
-	</script>
-
-	<table>
-		<tr>
-			<td><img src="@Url.Action("RemoteImage", routeValues: new {index = 1})"/></td>
-			<td><img src="@Url.Action("RemoteImage", routeValues: new {index = 2})"/></td>
-		</tr>
-		<tr>
-			<td>FXC-A</td>
-			<td>FXC-B</td>
-		</tr>
-		<tr>
-			<td><img src="@Url.Action("RemoteImage", routeValues: new {index = 3})"/></td>
-			<td><img src="@Url.Action("RemoteImage", routeValues: new {index = 4})"/></td>
-		</tr>
-		<tr>
-			<td>FXC-C</td>
-			<td>PTC-A</td>
-		</tr>
-	</table>
+	<div class="camera-grid">
+		@foreach (var camera in Model)
+		{
+        <div class="camera">
+	        <img src="@Url.Action("RemoteImage", routeValues: new {name = camera.Name})"/>
+	        <span>@camera.Name</span>
+        </div>
+		}
+		<div style="clear:both"></div>
+	</div>
 </div>
 </body>
 </html>

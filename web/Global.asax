@@ -1,1 +1,1 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="web.MvcApplication" Language="C#" %>
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="Camtastic.Web.MvcApplication" Language="C#" %>

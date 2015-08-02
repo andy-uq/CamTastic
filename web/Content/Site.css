@@ -22,3 +22,15 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.camera {
+	float: left;
+	margin: 10px;
+}
+
+.camera img {
+}
+
+.camera span {
+	display: block;
+}
